@@ -1,0 +1,38 @@
+﻿{
+    "created_at":  "2026-08-12T15:52:57.7214400+09:00",
+    "worker_build":  "job-profile-clones-v10",
+    "web_health":  {
+                       "ok":  true,
+                       "worker":  "connected",
+                       "web_build":  "portable-v1",
+                       "node_env":  "production"
+                   },
+    "active_jobs":  [
+                        {
+                            "id":  "e183b378496543f19e7d9a45edfc5c56",
+                            "original_filename":  "gmv_upload_template.xlsx",
+                            "status":  "running",
+                            "selected_profile_code":  "US_CHROME",
+                            "concurrency":  1,
+                            "current":  "la_guzman025"
+                        }
+                    ],
+    "files":  [
+                  "START_GMV_SITE.bat",
+                  "STOP_GMV_SITE.bat",
+                  "scripts\\launch-portable.ps1",
+                  "scripts\\stop-portable.ps1",
+                  "scripts\\patch-web-shell.js",
+                  "worker\\src\\gmv\\config.py",
+                  "worker\\src\\gmv\\api.py",
+                  "worker\\src\\gmv\\automation\\session.py",
+                  "worker\\tests\\test_api.py",
+                  "worker\\tests\\test_parallel_jobs.py",
+                  "web\\public\\app-shell.js",
+                  "web\\public\\app-shell.css",
+                  "web\\public\\invitations.html",
+                  "web\\.next\\routes-manifest.json",
+                  "web\\.next\\server\\app\\page.js",
+                  "web\\.next\\static\\chunks\\app\\page-ccd9d71035d84713.js"
+              ]
+}

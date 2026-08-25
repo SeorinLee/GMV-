@@ -1,0 +1,14 @@
+pydantic>=2.6
+openpyxl>=3.1
+playwright>=1.44
+fastapi>=0.110
+uvicorn>=0.29
+python-multipart>=0.0.9
+httpx>=0.27
+
+[dev]
+pytest>=8.0
+ruff>=0.4
+
+[portable]
+pyinstaller<7,>=6.16

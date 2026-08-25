@@ -1,0 +1,233 @@
+.automation-shell {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  border-bottom: 1px solid rgba(203, 215, 234, 0.82);
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(18px);
+  box-shadow: 0 8px 28px rgba(64, 83, 138, 0.06);
+}
+
+.automation-shell-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 14px 24px;
+}
+
+.automation-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 11px;
+  color: var(--fg);
+  font-size: 17px;
+  font-weight: 850;
+  letter-spacing: -0.02em;
+  white-space: nowrap;
+}
+
+.automation-brand-mark {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 12px;
+  color: #fff;
+  background: linear-gradient(135deg, var(--accent), #8a65f4);
+  box-shadow: 0 8px 18px rgba(73, 104, 237, 0.28);
+  font-size: 11px;
+  letter-spacing: 0.04em;
+}
+
+.automation-nav {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 4px;
+  border: 1px solid var(--line);
+  border-radius: 13px;
+  background: var(--card-soft);
+}
+
+.automation-nav a {
+  position: relative;
+  padding: 9px 16px;
+  border-radius: 9px;
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 750;
+  transition: color 0.16s ease, background 0.16s ease, box-shadow 0.16s ease;
+}
+
+.automation-nav a:hover {
+  color: var(--accent);
+  background: #fff;
+}
+
+.automation-nav a.active {
+  color: var(--accent-dark);
+  background: #fff;
+  box-shadow: 0 3px 10px rgba(64, 83, 138, 0.12);
+}
+
+.automation-nav a.active::after {
+  position: absolute;
+  right: 16px;
+  bottom: 4px;
+  left: 16px;
+  height: 2px;
+  border-radius: 999px;
+  background: var(--accent);
+  content: "";
+}
+
+.app-shell-ready .topbar {
+  position: static;
+  z-index: 10;
+  justify-content: flex-end;
+  min-height: 44px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  background: rgba(248, 250, 255, 0.78);
+  backdrop-filter: none;
+}
+
+.app-shell-ready .topbar .brand {
+  display: none;
+}
+
+.invitation-intro {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.invitation-intro-copy {
+  max-width: 760px;
+}
+
+.coming-soon-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 13px;
+  border: 1px solid #d9e4ff;
+  border-radius: 999px;
+  color: var(--accent-dark);
+  background: var(--accent-soft);
+  font-size: 12px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.coming-soon-badge::before {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--accent);
+  content: "";
+  box-shadow: 0 0 0 4px rgba(73, 104, 237, 0.12);
+}
+
+.invitation-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 26px;
+}
+
+.invitation-card {
+  display: flex;
+  flex-direction: column;
+  min-height: 310px;
+  padding: 28px;
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: 0 10px 30px rgba(64, 83, 138, 0.07);
+}
+
+.invitation-card-icon {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  margin-bottom: 22px;
+  border-radius: 15px;
+  color: var(--accent);
+  background: var(--accent-soft);
+  font-size: 22px;
+  font-weight: 800;
+}
+
+.invitation-card.sample .invitation-card-icon {
+  color: var(--cyan);
+  background: #eafafd;
+}
+
+.invitation-card h2 {
+  margin: 0 0 9px;
+  font-size: 20px;
+}
+
+.invitation-card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+.invitation-features {
+  display: grid;
+  gap: 9px;
+  margin: 20px 0 24px;
+  padding: 0;
+  color: #4a5b81;
+  font-size: 13px;
+  list-style: none;
+}
+
+.invitation-features li::before {
+  margin-right: 8px;
+  color: var(--accent);
+  content: "✓";
+  font-weight: 850;
+}
+
+.invitation-card .btn {
+  width: 100%;
+  margin-top: auto;
+}
+
+@media (max-width: 800px) {
+  .automation-shell-inner {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 10px;
+    padding: 12px 16px;
+  }
+
+  .automation-nav {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .automation-nav a {
+    padding: 9px 8px;
+    text-align: center;
+    font-size: 12px;
+  }
+
+  .invitation-intro {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .invitation-grid {
+    grid-template-columns: 1fr;
+  }
+}

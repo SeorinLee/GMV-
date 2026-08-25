@@ -1,0 +1,19 @@
+{
+  "/_not-found/page": "app/_not-found/page.js",
+  "/page": "app/page.js",
+  "/jobs/[id]/page": "app/jobs/[id]/page.js",
+  "/results/page": "app/results/page.js",
+  "/settings/page": "app/settings/page.js",
+  "/api/health/route": "app/api/health/route.js",
+  "/api/jobs/[id]/download/route": "app/api/jobs/[id]/download/route.js",
+  "/api/jobs/[id]/retry/route": "app/api/jobs/[id]/retry/route.js",
+  "/api/profile/login/route": "app/api/profile/login/route.js",
+  "/api/jobs/[id]/cancel/route": "app/api/jobs/[id]/cancel/route.js",
+  "/api/profile/reset/route": "app/api/profile/reset/route.js",
+  "/api/profile/verify/route": "app/api/profile/verify/route.js",
+  "/api/jobs/[id]/route": "app/api/jobs/[id]/route.js",
+  "/api/jobs/route": "app/api/jobs/route.js",
+  "/api/profile/route": "app/api/profile/route.js",
+  "/api/profiles/route": "app/api/profiles/route.js",
+  "/api/profiles/[code]/[action]/route": "app/api/profiles/[code]/[action]/route.js"
+}

@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>초대장 크리에이터 조회 | TikTok Automation</title>
+    <link rel="stylesheet" href="/_next/static/css/e161830ae003b404.css" />
+    <link rel="stylesheet" href="/app-shell.css?v=7" data-app-shell-style="true" />
+    <script src="/app-shell.js?v=8" defer></script>
+    <script src="/browser-market-selector.js?v=7" data-browser-market-selector="true" defer></script>
+    <script src="/invitation-acceptor.js?v=2" defer></script>
+  </head>
+  <body>
+    <header class="automation-shell">
+      <div class="automation-shell-inner">
+        <a class="automation-brand" href="/?ui=browser-market-v7"><span class="automation-brand-mark">TA</span><span>TikTok Automation</span></a>
+        <nav class="automation-nav" aria-label="자동화 메뉴">
+          <a href="/?ui=browser-market-v7" data-automation-section="gmv">GMV 자동화</a>
+          <a href="/invitations" data-automation-section="invitations" class="active" aria-current="page">초대장 조회</a>
+        </nav>
+      </div>
+    </header>
+    <header class="topbar"><nav aria-label="초대장 조회 도구 메뉴"><a href="/invitations">새 작업</a><a href="#accept-progress">작업 결과</a><a href="/settings?ui=profile-matrix-v7">TikTok 로그인</a></nav></header>
+
+    <main class="container">
+      <section class="page-intro invitation-intro">
+        <div class="invitation-intro-copy"><span class="eyebrow">INVITATION CREATOR EXTRACTOR</span><h1>초대장 크리에이터 조회</h1><p class="sub">Target Invitation을 정확히 찾아 Invited creators와 상품 추가·콘텐츠 게시 여부를 추출합니다.</p></div>
+        <span class="coming-soon-badge invitation-live-badge">CREATOR DETAILS</span>
+      </section>
+
+      <div class="status-strip accept-status-strip">
+        <div><span id="accept-worker-dot" class="status-dot checking"></span><span id="accept-worker-status">Worker 확인 중</span></div>
+        <div><span id="accept-login-dot" class="status-dot checking"></span><span id="accept-login-status">로그인 확인 중</span></div>
+      </div>
+
+      <section class="step-card">
+        <div class="step-heading"><span class="step-number">01</span><div><h2>브라우저와 마켓 선택</h2><p>Chrome 또는 Edge를 고른 뒤 US/UK 국가를 선택하세요.</p></div></div>
+        <div class="profile-grid">
+          <button type="button" class="profile-option selected" data-profile-code="US_CHROME"><span class="profile-copy"><strong>Chrome</strong></span></button>
+          <button type="button" class="profile-option" data-profile-code="UK_CHROME"><span class="profile-copy"><strong>Chrome</strong></span></button>
+          <button type="button" class="profile-option" data-profile-code="US_EDGE"><span class="profile-copy"><strong>Edge</strong></span></button>
+          <button type="button" class="profile-option" data-profile-code="UK_EDGE"><span class="profile-copy"><strong>Edge</strong></span></button>
+        </div>
+      </section>
+
+      <section class="step-card">
+        <div class="step-heading"><span class="step-number">02</span><div><h2>TikTok 로그인</h2><p>ID와 비밀번호는 저장하지 않습니다. 선택한 브라우저의 공식 TikTok 페이지에서 직접 로그인하세요.</p></div></div>
+        <div class="login-action-row"><div><strong>GMV와 초대장 조회가 동일한 저장 세션을 사용합니다.</strong><p id="selected-login-copy">Chrome · US 로그인 상태를 확인합니다.</p></div><a class="btn secondary" href="/settings?ui=profile-matrix-v7">TikTok 로그인 관리</a></div>
+      </section>
+
+      <section class="step-card">
+        <div class="step-heading"><span class="step-number">03</span><div><h2>조회할 초대장 입력</h2><p>초대장명을 줄바꿈 또는 쉼표로 입력하세요. 입력한 순서대로 처리됩니다.</p></div></div>
+        <textarea id="invitation-accept-input" class="invitation-textarea" rows="9" placeholder="PJH_SZP_0810_1~10&#10;D_MC_0720_15&#10;D_KTB_0430_1~5"></textarea>
+        <p class="input-hint">범위 예: <code>PJH_SZP_0810_1~10</code> → 1부터 10까지 순서대로 확장</p>
+      </section>
+
+      <section class="step-card">
+        <div class="step-heading"><span class="step-number">04</span><div><h2>입력 분석 미리보기</h2><p id="preview-summary">초대장명을 입력하면 Product · Date · Number를 오른쪽 기준으로 분석합니다.</p></div></div>
+        <p id="invitation-parse-error" class="inline-alert error" hidden></p>
+        <div class="card scroll accept-preview-table"><table><thead><tr><th>No</th><th>Full Invitation</th><th>Product</th><th>Date</th><th>No.</th></tr></thead><tbody id="invitation-preview-rows"></tbody></table></div>
+      </section>
+
+      <p id="invitation-accept-error" class="inline-alert error" hidden></p>
+      <div class="action-bar accept-action-bar"><div><span>선택한 환경</span><strong id="accept-selected-environment">Chrome · US</strong></div><button id="start-invitation-accept" class="btn primary large" disabled>초대장 조회 시작</button></div>
+
+      <section id="accept-progress" class="step-card invitation-progress-card" hidden>
+        <div class="step-heading"><span class="step-number">05</span><div><h2>작업 진행 및 결과</h2><p>현재 상태: <strong id="accept-job-status">-</strong> · 현재: <strong id="accept-job-current">-</strong></p></div></div>
+        <div class="stats invitation-stats">
+          <div class="stat"><div id="accept-total" class="n">0</div><div class="l">전체 초대장</div></div><div class="stat"><div id="accept-processed" class="n">0</div><div class="l">완료</div></div><div class="stat"><div id="accept-success" class="n">0</div><div class="l">조회 성공</div></div><div class="stat"><div id="accept-already" class="n">0</div><div class="l">Invited creators</div></div><div class="stat"><div id="accept-not-found" class="n">0</div><div class="l">Added products</div></div><div class="stat"><div id="accept-errors" class="n">0</div><div class="l">Posted content</div></div>
+        </div>
+        <div class="bar"><span id="accept-progress-fill" style="width:0%"></span></div>
+        <p id="accept-page-status" class="muted">Target Invitation Search Page -</p>
+        <div class="row invitation-actions"><button id="pause-invitation-accept" class="btn secondary">일시정지</button><button id="resume-invitation-accept" class="btn secondary" hidden>작업 계속</button><button id="cancel-invitation-accept" class="btn danger">중지</button><button id="retry-invitation-accept" class="btn secondary" hidden>오류 항목 다시 시작</button><a id="download-invitation-accept" class="btn primary" hidden>결과 다운로드</a><button id="reset-invitation-accept" class="btn ghost">초기화</button></div>
+
+        <div class="accept-work-grid">
+          <div class="card accept-log-card"><h3>실시간 작업 로그</h3><div id="invitation-accept-logs" class="accept-log-viewer"></div></div>
+          <div class="card scroll invitation-result-table"><table><thead><tr><th>Keyword</th><th>Invitation</th><th>Creator</th><th>Nickname</th><th>Creator ID</th><th>Region</th><th>Added products</th><th>Posted content</th></tr></thead><tbody id="invitation-accept-result-rows"></tbody></table></div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,21 @@
+# Local TikTok login/session and job data must never be committed.
+storage/
+worker/storage/
+
+# Generated, extracted deployment folder. Keep the distributable ZIP itself.
+dist/TikTok-GMV-Portable/
+
+# Local caches and process output.
+**/__pycache__/
+*.py[cod]
+.pytest_cache/
+web/.next/cache/
+*.log
+*.pid
+
+# Editor and operating-system metadata.
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
